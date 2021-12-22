@@ -1,0 +1,4 @@
+{:deps
+ {http-kit/http-kit    {:mvn/version "RELEASE"}
+  hickory/hickory      {:mvn/version "RELEASE"}
+  org.clojure/data.csv {:mvn/version "RELEASE"}}}
