@@ -4,7 +4,7 @@
 
 [Example resource (PaymentNotice)](https://www.hl7.org/fhir/paymentnotice.html)
 
-[CSV file](https://github.com/Panthevm/homework/blob/main/timpi/html_parsing/output.csv)
+[CSV file](/clojure/html_parsing/output.csv)
 
 # Example output
 
