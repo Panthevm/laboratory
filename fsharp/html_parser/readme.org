@@ -1,1 +1,7 @@
 ** https://www.onlinetrade.ru/catalogue/videokarty-c338/
+#+BEGIN_SRC zsh
+ # Run project
+ make run
+ # Open CSV
+ libreoffice catalog.csv 
+#+END_SRC
