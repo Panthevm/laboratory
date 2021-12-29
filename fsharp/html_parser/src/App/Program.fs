@@ -35,7 +35,7 @@ let extract_catalog_element(node:FSharp.Data.HtmlNode) =
     element
 
 let extract_catalog_elements(url:string, page:int) =
-    page
+    printf "Page: %A\n" page
     |> string
     |> fun page_string -> url + "?browse_mode=4?page=" + page_string
     |> FSharp.Data.HtmlDocument.Load
@@ -46,15 +46,15 @@ let extract_catalog(url:string) =
     url
     |> FSharp.Data.HtmlDocument.Load
     |> extract_page_collection
-    |> Seq.take 2
+    |> Seq.take 10 // LIMIT
     |> Seq.map (fun page -> extract_catalog_elements(url,page))
     |> Seq.concat
 
 let create_csv(path,elements) =
     elements
     |> Seq.map (fun (element:Dictionary<string,string>) ->
-                element.Item("Name")  + ";" +
-                element.Item("Price") + ";" +
+                element.Item("Name")  + "," +
+                element.Item("Price") + "," +
                 element.Item("Available"))
     |> fun rows -> System.IO.File.WriteAllLines(path, rows)
 
